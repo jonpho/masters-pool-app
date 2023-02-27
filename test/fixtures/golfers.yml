@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_id: 
+  firstname: MyString
+  lastname: MyString
+  tour: MyString
+  status: MyString
+
+two:
+  player_id: 
+  firstname: MyString
+  lastname: MyString
+  tour: MyString
+  status: MyString
