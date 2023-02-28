@@ -38,13 +38,13 @@ class LeaderboardsController < ApplicationController
 
   def update_leaderboard_entry(golfer_data, entry_data)
     begin
-      golfer_data.update!(position: golfer_data[:position],
-                               round_one: golfer_data[:round_one],
-                               round_two: golfer_data[:round_two],
-                               round_three: golfer_data[:round_three],
-                               round_four: golfer_data[:round_four],
-                               total: golfer_data[:total],
-                               earnings: golfer_data[:earnings])
+      golfer_data.update!(position: entry_data[:position],
+                               round_one: entry_data[:round_one],
+                               round_two: entry_data[:round_two],
+                               round_three: entry_data[:round_three],
+                               round_four: entry_data[:round_four],
+                               total: entry_data[:total],
+                               earnings: entry_data[:earnings])
       render status: 200, json: { message: "Success" }
     rescue ActiveRecord::RecordInvalid => e
       render status: 422, json: { message: e }
