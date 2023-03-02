@@ -171,6 +171,10 @@ GEM
     reline (0.3.2)
       io-console (~> 0.5)
     rexml (3.2.5)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
     rspec-core (3.12.1)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.2)
@@ -179,15 +183,19 @@ GEM
     rspec-mocks (3.12.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.12.0)
-    rspec-rails (6.0.1)
-      actionpack (>= 6.1)
-      activesupport (>= 6.1)
-      railties (>= 6.1)
-      rspec-core (~> 3.11)
-      rspec-expectations (~> 3.11)
-      rspec-mocks (~> 3.11)
-      rspec-support (~> 3.11)
+    rspec-rails (5.0.3)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (~> 3.10)
+      rspec-expectations (~> 3.10)
+      rspec-mocks (~> 3.10)
+      rspec-support (~> 3.10)
     rspec-support (3.12.0)
+    rswag (2.8.0)
+      rswag-api (= 2.8.0)
+      rswag-specs (= 2.8.0)
+      rswag-ui (= 2.8.0)
     rswag-api (2.8.0)
       railties (>= 3.1, < 7.1)
     rswag-specs (2.8.0)
@@ -251,10 +259,9 @@ DEPENDENCIES
   mysql2
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
-  rspec-rails
-  rswag-api
-  rswag-specs
-  rswag-ui
+  rspec
+  rspec-rails (~> 5.0.0)
+  rswag
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
@@ -265,7 +272,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 2.7.0p0
+   ruby 3.2.1p31
 
 BUNDLED WITH
    2.1.2

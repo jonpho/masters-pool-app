@@ -1,0 +1,53 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/single_entry":
+    post:
+      summary: Create New entry
+      tags:
+      - Single Entry
+      parameters: []
+      responses:
+        '201':
+          description: Leaderboard entry successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                golfer_id:
+                  type: string
+                year:
+                  type: integer
+                position:
+                  type: integer
+                round_one:
+                  type: integer
+                round_two:
+                  type: integer
+                round_three:
+                  type: integer
+                round_four:
+                  type: integer
+                total:
+                  type: integer
+                earnings:
+                  type: integer
+              required:
+              - golfer_id
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
