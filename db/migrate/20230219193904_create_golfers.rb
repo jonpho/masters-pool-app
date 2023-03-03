@@ -1,6 +1,6 @@
 class CreateGolfers < ActiveRecord::Migration[7.0]
   def change
-    create_table :golfers, { id: false } do |t|
+    create_table :golfers, id: false do |t|
       t.bigint :player_id, primary_key: true
       t.string :firstname
       t.string :lastname
