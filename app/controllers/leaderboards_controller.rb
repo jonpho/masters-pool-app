@@ -36,13 +36,11 @@ class LeaderboardsController < ApplicationController
   end
 
   def update_leaderboard_entry(golfer_data, entry_data)
-    golfer_data.update!(position: entry_data[:position],
-      round_one: entry_data[:round_one],
-      round_two: entry_data[:round_two],
-      round_three: entry_data[:round_three],
-      round_four: entry_data[:round_four],
-      total: entry_data[:total],
-      earnings: entry_data[:earnings])
+    entry_data = entry_data.except(:golfer_id, :year).compact
+    entry_data.each do |key, value|
+      golfer_data[key] = value
+    end
+    golfer_data.save!
     render status: 200, json: {message: "Success"}
   rescue ActiveRecord::RecordInvalid => e
     render status: 422, json: {message: e}
