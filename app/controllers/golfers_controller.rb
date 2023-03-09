@@ -1,4 +1,5 @@
 class GolfersController < ApplicationController
+  protect_from_forgery with: :null_session
   before_action :set_golfer, only: %i[ show edit update destroy ]
 
   # GET /golfers or /golfers.json
@@ -58,13 +59,14 @@ class GolfersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_golfer
-      @golfer = Golfer.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def golfer_params
-      params.require(:golfer).permit(:player_id, :firstname, :lastname, :tour, :status)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_golfer
+    @golfer = Golfer.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def golfer_params
+    params.require(:golfer).permit(:player_id, :firstname, :lastname, :tour, :status)
+  end
 end

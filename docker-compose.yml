@@ -1,0 +1,14 @@
+version: "3.9"
+services:
+  web:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+  db:
+    image: "mysql"
+    ports:
+      - "3307:3307"
+    environment:
+      MYSQL_DATABASE: mpooldev
+      MYSQL_ROOT_PASSWORD: password
