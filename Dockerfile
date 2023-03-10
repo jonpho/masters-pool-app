@@ -7,6 +7,3 @@ WORKDIR /app
 COPY . .
 RUN gem install bundler -v 2.4.7
 RUN bundle install
-
-CMD [ "rails", "server" ]
-EXPOSE 3000
