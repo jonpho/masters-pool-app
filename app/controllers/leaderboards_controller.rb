@@ -18,6 +18,10 @@ class LeaderboardsController < ApplicationController
     golfer_scorecard.nil? ? leaderboard_entry(data) : update_leaderboard_entry(golfer_scorecard, data)
   end
 
+  def index
+    @leaderboards = Leaderboard.all
+  end
+
   private
 
   def leaderboard_entry(golfer_data)
