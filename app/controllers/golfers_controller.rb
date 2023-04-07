@@ -67,6 +67,6 @@ class GolfersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def golfer_params
-    params.require(:golfer).permit(:player_id, :name, :tour, :status)
+    params.require(:golfer).permit(:player_id, :name, :world_ranking)
   end
 end
