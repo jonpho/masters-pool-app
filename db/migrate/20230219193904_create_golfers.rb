@@ -3,8 +3,7 @@ class CreateGolfers < ActiveRecord::Migration[7.0]
     create_table :golfers, id: false do |t|
       t.bigint :player_id, primary_key: true
       t.string :name
-      t.string :tour
-      t.string :status
+      t.string :world_ranking
 
       t.timestamps
     end

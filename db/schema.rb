@@ -13,8 +13,7 @@
 ActiveRecord::Schema[7.0].define(version: 2023_03_18_232805) do
   create_table "golfers", primary_key: "player_id", charset: "utf8mb3", force: :cascade do |t|
     t.string "name"
-    t.string "tour"
-    t.string "status"
+    t.string "world_ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
