@@ -15,12 +15,12 @@ def create_grouping_data
 end
 
 def create_golfers
-  pros = CSV.parse(File.read(Rails.root.join("db", "mastersPlayerRankings2013.csv")), headers: true)
+  pros_list = CSV.parse(File.read(Rails.root.join("db", "mastersPlayerRankings2013.csv")), headers: true)
   puts "Creating Golfers"
-  puts "Pro Count #{pros.count}"
+  puts "Pro Count #{pros_list.count}"
 
-  pros.each do |pro|
-    Golfer.create!(name: pro["player"], world_ranking: pro["ranking"])
+  pros_list.each do |pro_data|
+    Golfer.create!(name: pro_data["player"], world_ranking: pro_data["ranking"])
   end
 end
 
