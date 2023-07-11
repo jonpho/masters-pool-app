@@ -11,14 +11,14 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_18_232805) do
-  create_table "golfers", primary_key: "player_id", charset: "utf8mb3", force: :cascade do |t|
+  create_table "golfers", primary_key: "player_id", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.string "world_ranking"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "group_assignments", charset: "utf8mb3", force: :cascade do |t|
+  create_table "group_assignments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "grouping_id"
     t.bigint "golfer_id"
     t.datetime "created_at", null: false
@@ -27,13 +27,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_232805) do
     t.index ["grouping_id"], name: "index_group_assignments_on_grouping_id"
   end
 
-  create_table "groupings", charset: "utf8mb3", force: :cascade do |t|
+  create_table "groupings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "flight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "leaderboards", charset: "utf8mb3", force: :cascade do |t|
+  create_table "leaderboards", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "golfer_id"
     t.integer "year"
     t.integer "position"
@@ -48,7 +48,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_232805) do
     t.index ["golfer_id"], name: "index_leaderboards_on_golfer_id"
   end
 
-  create_table "user_submissions", charset: "utf8mb3", force: :cascade do |t|
+  create_table "user_submissions", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "golfer_id"
     t.datetime "created_at", null: false
@@ -57,7 +57,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_18_232805) do
     t.index ["user_id"], name: "index_user_submissions_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb3", force: :cascade do |t|
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "username"
     t.string "firstname"
     t.string "lastname"
