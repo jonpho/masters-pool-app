@@ -1,24 +1,20 @@
-# README
+# The Master's Golf Pool Application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Tech Stack
 
-Things you may want to cover:
+- Ruby on Rails
+- mysql 8
+- Docker
 
-* Ruby version
+## Docker Setup Instructions
 
-* System dependencies
+1. run the following command `docker compose up`
+2. run the follwing to migrate the db `docker compose run web rails db:migrate`
 
-* Configuration
+## Local Setup Instructions
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone Repository
+2. Bundle Install
+3. If the mysql2 fails to install check the mysql2 gem page for more directions https://github.com/brianmario/mysql2
+4. DB Migrations rails db:create
+5. rails db:migrate
