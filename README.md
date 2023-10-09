@@ -18,3 +18,5 @@
 3. If the mysql2 fails to install check the mysql2 gem page for more directions https://github.com/brianmario/mysql2
 4. DB Migrations rails db:create
 5. rails db:migrate
+
+If a server.pid error appears delete the server.pid file in the tmp folder

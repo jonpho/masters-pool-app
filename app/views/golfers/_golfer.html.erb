@@ -1,17 +1,9 @@
 <div id="<%= dom_id golfer %>">
-  <p>
-    <strong>Player:</strong>
-    <%= golfer.player_id %>
-  </p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= golfer.name %>
-  </p>
-
-  <p>
-    <strong>World Ranking:</strong>
-    <%= golfer.world_ranking %>
-  </p>
-
+    <tbody>
+      <tr>
+        <td><%= golfer.world_ranking%></td>
+        <td><%= golfer.name%></td>
+        <td><%= link_to "Show this golfer", golfer %></td>
+      </tr>
+    </tbody>
 </div>

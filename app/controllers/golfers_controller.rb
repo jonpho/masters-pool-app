@@ -4,7 +4,15 @@ class GolfersController < ApplicationController
 
   # GET /golfers or /golfers.json
   def index
-    @golfers = Golfer.all
+    @golfers = Golfer.all.sort_by do |golfer|
+      if golfer.world_ranking == "Unranked"
+        golfer.world_ranking = 200
+      elsif golfer.world_ranking == "Amateur"
+        golfer.world_ranking = 300
+      else
+        golfer.world_ranking.to_i
+      end
+    end
   end
 
   # GET /golfers/1 or /golfers/1.json
