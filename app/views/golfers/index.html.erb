@@ -3,12 +3,18 @@
 <h1>Golfers</h1>
 
 <div id="golfers">
-  <% @golfers.each do |golfer| %>
-    <%= render golfer %>
-    <p>
-      <%= link_to "Show this golfer", golfer %>
-    </p>
-  <% end %>
+  <table>
+    <thead>
+      <tr>
+        <th>World Ranking</th>
+        <th>Name</th>
+        <th>Edits</th>
+      </tr>
+    </thead>
+    <% @golfers.each do |golfer| %>
+      <%= render golfer %>
+    <% end %>
+  </table>
 </div>
 
 <%= link_to "New golfer", new_golfer_path %>

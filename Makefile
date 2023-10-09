@@ -12,8 +12,14 @@ db_migrate:
 db_seed:
 	@docker compose run web rails db:seed
 
+db_sh:
+	@docker compose exec -it db sh
+
 down:
 	@docker compose down
+
+app_sh:
+	@docker compose exec -it app sh
 
 app_destroy:
 	@yes | docker container prune
