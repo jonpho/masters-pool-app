@@ -1,10 +1,13 @@
+clean_build: build db_setup up
+
 build:
 	@docker compose build
 
 up:
 	@docker compose up
-	@docker compose run web rails db:migrate
-	@docker compose run web rails db:seed
+
+db_setup:
+	@docker compose run web rails db:migrate db:seed
 
 db_migrate:
 	@docker compose run web rails db:migrate
