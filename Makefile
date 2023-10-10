@@ -1,4 +1,4 @@
-clean_build: build db_setup up
+clean_build: app_destroy build db_setup up
 
 build:
 	@docker compose build
@@ -27,5 +27,5 @@ app_sh:
 app_destroy:
 	@yes | docker container prune
 	@yes | docker image prune -a
-	@yes | docker volume prune
+	@yes | docker volume prune --filter all=1
 	@yes | docker system prune --volumes
