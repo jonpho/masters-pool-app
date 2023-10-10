@@ -6,10 +6,20 @@
 - mysql 8
 - Docker
 
-## Docker Setup Instructions
+## Docker One Command Setup Instruction
 
-1. run the following command `docker compose up`
-2. run the follwing to migrate the db `docker compose run web rails db:migrate`
+1. Run the following command `make clean_build` This command will build and setup the DB then start the containers
+
+## Docker Step By Step Instructions
+
+1. Run the following command to build the containers `make build`
+2. Run the following commmand to setup the DB `make db_setup`
+3. Start the containers for the app `make up`
+
+## Make Commands of Note
+
+`make up` Starts All Containers
+`make down` Stops All Containers
 
 ## Local Setup Instructions
 
