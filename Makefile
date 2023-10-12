@@ -21,8 +21,8 @@ db_sh:
 down:
 	@docker compose down
 
-app_sh:
-	@docker compose exec -it app sh
+web_sh:
+	@docker compose exec -it web sh
 
 app_destroy:
 	@yes | docker container prune
