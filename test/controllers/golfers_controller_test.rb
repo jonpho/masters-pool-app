@@ -17,7 +17,7 @@ class GolfersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create golfer" do
     assert_difference("Golfer.count") do
-      post golfers_url, params: { golfer: { firstname: @golfer.firstname, lastname: @golfer.lastname, player_id: @golfer.player_id, status: @golfer.status, tour: @golfer.tour } }
+      post golfers_url, params: { golfer: { firstname: @golfer.firstname, lastname: @golfer.lastname, player_id: @golfer.player_id } }
     end
 
     assert_redirected_to golfer_url(Golfer.last)
@@ -34,7 +34,7 @@ class GolfersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update golfer" do
-    patch golfer_url(@golfer), params: { golfer: { firstname: @golfer.firstname, lastname: @golfer.lastname, player_id: @golfer.player_id, status: @golfer.status, tour: @golfer.tour } }
+    patch golfer_url(@golfer), params: { golfer: { firstname: @golfer.firstname, lastname: @golfer.lastname, player_id: @golfer.player_id } }
     assert_redirected_to golfer_url(@golfer)
   end
 

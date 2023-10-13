@@ -17,8 +17,6 @@ class GolfersTest < ApplicationSystemTestCase
     fill_in "Firstname", with: @golfer.firstname
     fill_in "Lastname", with: @golfer.lastname
     fill_in "Player", with: @golfer.player_id
-    fill_in "Status", with: @golfer.status
-    fill_in "Tour", with: @golfer.tour
     click_on "Create Golfer"
 
     assert_text "Golfer was successfully created"
@@ -32,8 +30,6 @@ class GolfersTest < ApplicationSystemTestCase
     fill_in "Firstname", with: @golfer.firstname
     fill_in "Lastname", with: @golfer.lastname
     fill_in "Player", with: @golfer.player_id
-    fill_in "Status", with: @golfer.status
-    fill_in "Tour", with: @golfer.tour
     click_on "Update Golfer"
 
     assert_text "Golfer was successfully updated"
