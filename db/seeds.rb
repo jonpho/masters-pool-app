@@ -7,13 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'csv'
 
-def create_grouping_data
-  flights = ["Group A", "Group B", "Group C", "Group D", "Group E"]
-  flights.each do |flight_group|
-    Grouping.create(flight: flight_group)
-  end
-end
-
 def create_flight_data
   flight_names = ["Group A", "Group B", "Group C", "Group D", "Group E"]
   flight_names.each do |flight_group|
@@ -33,6 +26,5 @@ def create_golfers
 end
 
 create_golfers
-create_grouping_data
 create_flight_data
 Leaderboard.create(golfer_id: 1, year: 2023, position: 1, round_one: 69, round_two: 71, round_three: 70, round_four: 68, total: 278)
