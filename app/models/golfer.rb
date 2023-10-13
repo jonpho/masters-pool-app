@@ -3,5 +3,6 @@ class Golfer < ApplicationRecord
 
   has_many :leaderboards
   has_and_belongs_to_many :groupings
+  has_and_belongs_to_many :flights
   # has_and_belongs_to_many :user_submissions
 end

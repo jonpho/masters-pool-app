@@ -14,6 +14,14 @@ def create_grouping_data
   end
 end
 
+def create_flight_data
+  flight_names = ["Group A", "Group B", "Group C", "Group D", "Group E"]
+  flight_names.each do |flight_group|
+    Flight.create(name: flight_group)
+  end
+  puts "Created #{flight_names.count} Flight Groups"
+end
+
 def create_golfers
   pros_list = CSV.parse(File.read(Rails.root.join("db", "mastersPlayerRankings2013.csv")), headers: true)
   puts "Creating Golfers"
@@ -26,4 +34,5 @@ end
 
 create_golfers
 create_grouping_data
+create_flight_data
 Leaderboard.create(golfer_id: 1, year: 2023, position: 1, round_one: 69, round_two: 71, round_three: 70, round_four: 68, total: 278)
