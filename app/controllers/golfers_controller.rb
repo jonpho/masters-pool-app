@@ -1,6 +1,7 @@
 class GolfersController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :set_golfer, only: %i[ show edit update destroy ]
+  helper_method :flight_groups
 
   # GET /golfers or /golfers.json
   def index
@@ -68,6 +69,10 @@ class GolfersController < ApplicationController
 
   private
 
+  def flight_groups(id)
+    id == nil ? "" : Flight.find_by(id: id).name
+  end
+
   # Use callbacks to share common setup or constraints between actions.
   def set_golfer
     @golfer = Golfer.find(params[:id])
@@ -75,6 +80,6 @@ class GolfersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def golfer_params
-    params.require(:golfer).permit(:player_id, :name, :world_ranking)
+    params.require(:golfer).permit(:player_id, :name, :world_ranking, :flight_ids)
   end
 end
