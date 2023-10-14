@@ -8,11 +8,17 @@
       <tr>
         <th>World Ranking</th>
         <th>Name</th>
+        <th>Flight Group</th>
         <th>Edits</th>
       </tr>
     </thead>
     <% @golfers.each do |golfer| %>
-      <%= render golfer %>
+    <tbody>
+      <tr>
+        <%= render golfer %>
+        <td><%= link_to "Show this golfer", golfer %></td>
+      </tr>
+    </tbody>
     <% end %>
   </table>
 </div>

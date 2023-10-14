@@ -1,10 +1,25 @@
 <p style="color: green"><%= notice %></p>
-
-<%= render @golfer %>
+<table>
+  <thead>
+    <tr>
+      <th>World Ranking</th>
+      <th>Name</th>
+      <th>Flight Group</td>
+      <th>Edits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @golfer %>
+    <td>
+      <div><%= link_to "Edit this golfer", edit_golfer_path(@golfer) %></div> 
+      <div><%= button_to "Destroy", @golfer, method: :delete %></div>
+    </td>
+  </tbody>
+</table>
 
 <div>
-  <%= link_to "Edit this golfer", edit_golfer_path(@golfer) %> |
+  
+</div>
+<div>
   <%= link_to "Back to golfers", golfers_path %>
-
-  <%= button_to "Destroy this golfer", @golfer, method: :delete %>
 </div>

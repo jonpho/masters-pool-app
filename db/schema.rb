@@ -10,11 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_13_000118) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_13_030124) do
   create_table "flights", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "flights_golfers", id: false, charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "golfer_id", null: false
+    t.bigint "flight_id", null: false
+    t.index ["flight_id", "golfer_id"], name: "index_flights_golfers_on_flight_id_and_golfer_id"
+    t.index ["golfer_id", "flight_id"], name: "index_flights_golfers_on_golfer_id_and_flight_id"
   end
 
   create_table "golfers", primary_key: "player_id", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|

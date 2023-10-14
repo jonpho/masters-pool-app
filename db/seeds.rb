@@ -8,7 +8,7 @@
 require 'csv'
 
 def create_flight_data
-  flight_names = ["Group A", "Group B", "Group C", "Group D", "Group E"]
+  flight_names = ["Group A", "Group B", "Group C", "Group D", "Group E", "Group F", "Group G"]
   flight_names.each do |flight_group|
     Flight.create(name: flight_group)
   end
@@ -25,6 +25,37 @@ def create_golfers
   end
 end
 
+def create_flight_groups
+  Golfer.all.collect do |golfer|
+    compare = golfer.world_ranking
+    
+    if compare == "Unranked"
+      golfer.flight_ids = 5
+      next
+    elsif compare == "Amateur"
+      golfer.flight_ids = 6
+      next
+    else
+      compare = golfer.world_ranking.to_i
+    end
+
+    if compare <= 10
+      golfer.flight_ids = 1
+    elsif compare > 10 && compare <= 27
+      golfer.flight_ids = 2
+    elsif compare > 27 && compare <= 49
+      golfer.flight_ids = 3
+    elsif compare > 49 && compare <= 106
+      golfer.flight_ids = 4
+    elsif compare >= 123 && compare <= 200
+      golfer.flight_ids = 5
+    else
+      golfer.flight_is = 6
+    end
+  end
+end
+
 create_golfers
 create_flight_data
+create_flight_groups
 Leaderboard.create(golfer_id: 1, year: 2023, position: 1, round_one: 69, round_two: 71, round_three: 70, round_four: 68, total: 278)
