@@ -1,9 +1,25 @@
-<h1>Flights Names</h1>
+<h1>Flights</h1>
 
 <div>
   <% @flights.each do |flight| %>
-  <p>
-    <%= flight.name %>
-  </p>
+    <p><%= flight.name %></p>
+    <table>
+      <thead>
+        <tr>
+          <th>World Ranking</th>
+          <th>Golfer</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% golfer_ids = Flight.find_by(id: flight.id).golfer_ids%>
+        <% golfer_ids.each do |gid| %>
+        <% golfer = Golfer.find_by(player_id: gid) %>
+        <tr>
+          <td><%= golfer.world_ranking %></td>
+          <td><%= golfer.name %></td>
+        <% end %>
+        </tr>
+      </tbody>
+    </table>
   <% end %>
 </div>
