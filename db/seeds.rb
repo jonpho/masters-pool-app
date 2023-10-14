@@ -8,7 +8,7 @@
 require 'csv'
 
 def create_flight_data
-  flight_names = ["Group A", "Group B", "Group C", "Group D", "Group E", "Group F", "Group G"]
+  flight_names = ["Group A", "Group B", "Group C", "Group D", "Group E", "Group F"]
   flight_names.each do |flight_group|
     Flight.create(name: flight_group)
   end
