@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Golfers</h1>
-
+<div><%= button_to "logout", destroy_user_session_path, method: :delete %></div>
 <div id="golfers">
   <table>
     <thead>

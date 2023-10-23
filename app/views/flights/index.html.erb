@@ -1,5 +1,5 @@
 <h1>Flights</h1>
-
+<div><%= button_to "logout", destroy_user_session_path, method: :delete %></div>
 <div>
   <% @flights.each do |flight| %>
     <p><%= flight.name %></p>
