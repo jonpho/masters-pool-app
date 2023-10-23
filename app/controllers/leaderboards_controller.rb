@@ -1,5 +1,6 @@
 class LeaderboardsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authenticate_user!
 
   def single_entry
     data = {

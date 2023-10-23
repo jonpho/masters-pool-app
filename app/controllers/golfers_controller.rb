@@ -2,6 +2,7 @@ class GolfersController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :set_golfer, only: %i[ show edit update destroy ]
   helper_method :flight_groups
+  before_action :authenticate_user!
 
   # GET /golfers or /golfers.json
   def index
