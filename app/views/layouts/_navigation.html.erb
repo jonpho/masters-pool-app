@@ -1,0 +1,10 @@
+<nav>
+  <div>
+    <a href="/">Home</a>
+    <a href="/golfers">Golfers</a>
+    <a href="/flights">Flights</a>
+  </div>
+  <div>
+    <%= button_to "logout", destroy_user_session_path, method: :delete %>
+  </div>
+</nav>
